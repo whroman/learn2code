@@ -1,2 +1,0 @@
-- install xcode https://itunes.apple.com/us/app/xcode/id497799835?mt=12
-- install sublime text editor https://www.sublimetext.com/3

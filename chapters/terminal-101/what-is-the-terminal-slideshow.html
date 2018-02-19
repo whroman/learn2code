@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>What is the terminal and why do we need it?</title>
+	<link rel="stylesheet" href="../../assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="../../assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="../../assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="../../assets/css/slideshow.css">
+	<!-- <link rel="stylesheet" href="../../assets/css/bootstrap.min.css"> -->
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# What is the terminal and why do we need it?
+length: 10-15 mins
+
+#HSLIDE
+
+## all technology has an interface
+(Q) our interaction with macs mainly depends on these three components:
+
+<ul class="fragment">
+    <li>keyboards</li>
+    <li>mice</li>
+    <li>screen</li>
+</ul>    
+
+
+#HSLIDE
+
+## compare to household object(s)
+
+- microwave
+ - LED display, buttons, dials, etc
+- smartphone
+ - touchscreen, buttons, microphone
+- ask students
+
+#HSLIDE
+
+## there are two ways to interfact with our macs
+
+- Graphic User Interface
+ - keyboard, screen, mouse simultaneously
+ - graphic-based interface
+  - layered windows
+  - clicking on the screen makes stuff happen
+- Command Line Interface
+ - only keyboard and screen
+ - text-based interface
+  - clicking on the screen DOES NOT make stuff happen
+
+#HSLIDE
+
+## each interface is better suited for different tasks
+
+- GUI
+ - great for visual content
+  - photos
+  - videos
+  - forms
+  - use fb page as example
+ - learning curve is much smaller than the CLI
+- CLI
+ - no input restrictions
+  - i can surf the web, delete my hard drive, edit text
+
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="../../assets/js/reveal/reveal.js"></script>
+<script src="../../assets/js/reveal/lib/head.min.js"></script>
+<script src="../../assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+
+	// Options which are passed into marked
+	// See https://github.com/chjj/marked#options-1
+	markdown: {
+		pedantic: true
+	},
+
+	dependencies: [
+		{ src: "../../assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "../../assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "../../assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "../../assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "../../assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
+</html>

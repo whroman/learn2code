@@ -1,0 +1,280 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>exploring the file system - learn2code</title>
+		<link rel="stylesheet" href="../../assets/css/highlight.min.css">
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../assets/css/tipuesearch.css">
+		<link rel="stylesheet" href="../../assets/css/main.css">
+	</head>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../../">learn2code</a> <p class="navbar-text hidden-xs">exploring the file system</p>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<form action="../../search.html" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="../../chapters/terminal-101/exploring-the-file-system-slideshow.html" target="_blank">View as slideshow</a></li>
+						<!--li><a href="../../chapters/terminal-101/exploring-the-file-system-raw.html">View Markdown</a></li-->
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!--
+<div class="toc">
+<p class="lead">Table of contents:</p>
+<p class="toc-1">
+<a href="#exploring-the-file-system">exploring the file system</a>
+</p>
+<p class="toc-2">
+<a href="#what-is-a-file-system-">what is a file system?</a>
+</p>
+<p class="toc-2">
+<a href="#navigating-the-file-system">navigating the file system</a>
+</p>
+<p class="toc-3">
+<a href="#creating-and-deleting-files">creating and deleting files</a>
+</p>
+<p class="toc-2">
+<a href="#command-history">command history</a>
+</p>
+<p class="toc-2">
+<a href="#errors-are-your-friend">errors are your friend</a>
+</p>
+<p class="toc-3">
+<a href="#creating-directories">creating directories</a>
+</p>
+<p class="toc-3">
+<a href="#command-history">command history</a>
+</p>
+<p class="toc-3">
+<a href="#attempt-to-delete-a-directory">attempt to delete a directory</a>
+</p>
+<p class="toc-3">
+<a href="#-man-exec-">&#x60;man &lt;exec&gt;&#x60;</a>
+</p>
+<p class="toc-3">
+<a href="#-exec-rm-d-hello-">(EXEC) &#x60;rm -d hello&#x60;</a>
+</p>
+<p class="toc-3">
+<a href="#fun-fact">FUN FACT</a>
+</p>
+<p class="toc-3">
+<a href="#command-options">command options</a>
+</p>
+</div>
+-->
+
+		<div class="container">
+			<div class="row">
+				<nav id="sidebar" class="col-lg-2 col-sm-3">
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/our-first-commands.html">Our First Commands</a></li>
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/what-is-the-terminal.html">What is the Terminal</a></li>
+						<li role="presentation" class="active"><a href="../../chapters/terminal-101/exploring-the-file-system.html">Exploring the File System</a></li>
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/customizing-our-cli.html">Customizing our CLI</a></li>
+					</ul>
+					<!--
+Available versions:<br>
+raw<br>
+->chapters/terminal-101/exploring-the-file-system-raw.html<br>
+slideshow<br>
+->chapters/terminal-101/exploring-the-file-system-slideshow.html<br>
+default<br>
+->chapters/terminal-101/exploring-the-file-system.html<br>
+<br>
+Document informations:<br>
+chapters/terminal-101/exploring-the-file-system.md<br><br>
+active
+-->
+				</nav>
+				<header>
+					<div class="entry-meta text-right">
+
+					</div>
+				</header>
+				<article id="content" class="col-lg-10 col-sm-9">
+					<h1 id="exploring-the-file-system">exploring the file system</h1>
+<p>(new execs in this lesson: cd, touch, man, rm)
+(length: 25-30 mins)</p>
+<h2 id="what-is-a-file-system-">what is a file system?</h2>
+<ul>
+<li>a collection of files and directories</li>
+<li>directories can only hold files or other directories</li>
+<li><code>Finder</code> is probably how you&#39;re most familiar to getting around a file system<ul>
+<li>show example with finder</li>
+</ul>
+</li>
+<li>in the terminal, we have to use commands in order to navigate the file system, which we will now learn to do</li>
+</ul>
+<h2 id="navigating-the-file-system">navigating the file system</h2>
+<ul>
+<li>we&#39;re going to use a new executable, <code>cd</code></li>
+<li><p>it stands for &quot;change directory&quot;</p>
+</li>
+<li><p>(EXEC) <code>ls .</code></p>
+<ul>
+<li>see the dirs and files of your current dir</li>
+</ul>
+</li>
+<li>(EXEC) <code>cd Documents</code><ul>
+<li>english translation: <change directory to> <Documents> </li>
+</ul>
+</li>
+<li>(EXEC) <code>ls .</code><ul>
+<li>see the dirs and files of <code>Documents</code></li>
+<li>compare to Finder</li>
+</ul>
+</li>
+<li>(EXEC) <code>cd ../</code><ul>
+<li>english translation: <change directory to> <parent directory></li>
+<li>family relations are used to describe file systems:<ul>
+<li>parent, child, sibling</li>
+<li>show example of each relationship in Finder </li>
+</ul>
+</li>
+<li>now we&#39;re back where we started</li>
+</ul>
+</li>
+<li>(EXEC) <code>ls .</code><ul>
+<li>now we see that these are the same files and dirs that we had when we began</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-and-deleting-files">creating and deleting files</h3>
+<ul>
+<li>(EXEC) <code>touch hello.txt</code><ul>
+<li>english translation: <create a file> <called hello.txt> </li>
+</ul>
+</li>
+<li>(Q) how can we check to see whether this file exists?<ul>
+<li>(EXEC) <code>ls .</code></li>
+<li>view in finder</li>
+<li>show file through both methods</li>
+</ul>
+</li>
+<li>(EXEC) <code>rm hello.txt</code><ul>
+<li>english translation: <ReMove> &lt;hello.txt&gt;</li>
+</ul>
+</li>
+<li>(Q) how can we make sure this file was deleted?<ul>
+<li>same as above</li>
+</ul>
+</li>
+</ul>
+<h2 id="command-history">command history</h2>
+<ul>
+<li>you can press &quot;up arrow&quot; to cycle back through your history of executed commads</li>
+<li>use &quot;down arrow&quot; to cycle forward</li>
+</ul>
+<h2 id="errors-are-your-friend">errors are your friend</h2>
+<ul>
+<li>cycle through your history and get to (EXEC) <code>rm hello.txt</code></li>
+<li>execute it</li>
+<li>result is error: (EXEC) <code>rm: foo.txt: No such file or directory</code></li>
+<li>we were telling the terminal to delete a file that doesnt exist, so the terminal let us know that this file doesnt exist</li>
+</ul>
+<h3 id="creating-directories">creating directories</h3>
+<ul>
+<li>we&#39;re going to create a new directory, so lets make sure that it doesnt exist yet in our file system:<ul>
+<li>(EXEC) <code>ls .</code></li>
+<li>(EXEC) <code>mkdir hello</code><ul>
+<li>english translation: <create a directory> <called "hello"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="command-history">command history</h3>
+<ul>
+<li>use terminal history (&quot;up arrow&quot;) to get to <code>ls .</code> and execute it<ul>
+<li>make sure that the <code>hello</code> dir is there</li>
+</ul>
+</li>
+</ul>
+<h3 id="attempt-to-delete-a-directory">attempt to delete a directory</h3>
+<ul>
+<li>(EXEC) <code>rm hello</code><ul>
+<li>english translation: <remove> &lt;&quot;hello&quot;&gt;</li>
+<li><code>rm: hello/: is a directory</code></li>
+<li>what do we do...?</li>
+</ul>
+</li>
+</ul>
+<h3 id="man-exec"><code>man &lt;exec&gt;</code></h3>
+<ul>
+<li>english translation: <show me the MANual for> <any executable></li>
+<li>lets use <code>man</code> to find out if we can use <code>rm</code> to delete dirs</li>
+<li>(EXEC) <code>man rm</code><ul>
+<li>we&#39;re in a file-read mode!</li>
+<li>interface:<ul>
+<li>&quot;space bar&quot;   ||     &quot;scroll down&quot;</li>
+<li>&quot;b&quot;             ||     &quot;scroll up&quot;</li>
+<li>&quot;q&quot;           ||  &quot;exit read mode&quot;</li>
+</ul>
+</li>
+<li>find entry for <code>-d</code></li>
+<li>press <code>q</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="-exec-rm-d-hello">(EXEC) <code>rm -d hello</code></h3>
+<pre><code>                                        exec     option          argument
+</code></pre><ul>
+<li>english translation: <remove> <the directory> &lt;&quot;hello&quot;&gt;</li>
+<li>options are always specified with a <code>-</code></li>
+<li>we should have succeeded this time in deleting <code>hello</code></li>
+<li>check using <code>ls .</code></li>
+</ul>
+<h3 id="fun-fact">FUN FACT</h3>
+<ul>
+<li>dont do this!</li>
+<li><code>sudo rm -rf .</code></li>
+</ul>
+<h3 id="command-options">command options</h3>
+<p>if <code>commands</code> are like sentences to computers,
+and <code>executables</code> are like verbs to computers,
+and <code>arguments</code> are like nouns to computers,
+then what are <code>options</code>?</p>
+<p>options are like adverbs. they modify our exectuables/verbs/actions.</p>
+
+				</article>
+			</div>
+		</div>
+
+		<footer><a href="../../site-index.html">Pages index</a>
+</footer>
+
+		<script src="../../assets/js/jquery.js"></script>
+		<script src="../../assets/js/bootstrap.min.js"></script>
+		<script src="../../assets/js/highlight.min.js"></script>
+		<script src="../../assets/js/tipuesearch_set.js"></script>
+		<script src="../../assets/js/tipuesearch.min.js"></script>
+		<script>
+			$(function() {
+				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: '../../index.json'
+				});
+			});
+		</script>
+		
+		<!-- Generated by Vegetables from 'chapters/terminal-101/exploring-the-file-system.md' with format 'default' - '2018-2-19 20:27:20' -->
+	</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Our First Commands</title>
+	<link rel="stylesheet" href="../../assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="../../assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="../../assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="../../assets/css/slideshow.css">
+	<!-- <link rel="stylesheet" href="../../assets/css/bootstrap.min.css"> -->
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# Our First Commands
+new executables: `open` + `ls`
+
+length: 10-15 mins
+
+#HSLIDE
+
+## our first command: open
+
+1. open terminal
+1. type `open .`
+1. press &quot;enter&quot;
+
+we just **executed** our first **command**!
+
+in other words, you typed something into your terminal and pressed &quot;enter&quot;
+
+think of **commands** as **sentences for computers**
+
+dissecting `open .`
+
+|  language |  sentence | 
+|--|--|
+|  bash |  `open .` | 
+|  english |  &quot;open with Finder&quot;  &quot;this directory&quot; | 
+|  generalized |  &quot;take this action&quot; &quot;onto this&quot; | 
+|  linguistic |  &quot;verb&quot; &quot;prepositional phrase&quot; | 
+|  computer sci |  &quot;executable&quot; &quot;argument&quot; | 
+
+#HSLIDE
+
+## what is a command?
+
+- we can perform actions in a terminal by &quot;executing commands&quot;
+- a **command** is composed of three parts:
+ - `executable`
+ - `arguments`
+ - `options`
+- we&#39;ll only deal with `executables` and `arguments` for now
+- the parts of a command are *separated by spaces*, just like in written english
+
+#HSLIDE
+
+## the executable
+`open .`
+
+
+- the first part of any command is the **executable**
+- for this command, the executable is `open`
+- think of **executables** as the **verbs** of the CLI
+- an executable is the action that we want to occur
+
+#HSLIDE
+
+## the argument
+`open .`
+
+
+- in this command, the `.` is called an **argument**
+- think of **arguments** as the **nouns** of the CLI
+ - an **argument** describes what we want to act upon with our **executable** (aka **verb**)
+
+#HSLIDE
+
+## execute ls .
+
+- L i S t
+- compare the terminal output with the Finder dir
+- translation to english: **<list the contents of> <this directory>**
+- now we&#39;ve seen two different commands, `open` and `ls`, use `.` as an argument
+
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="../../assets/js/reveal/reveal.js"></script>
+<script src="../../assets/js/reveal/lib/head.min.js"></script>
+<script src="../../assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+
+	// Options which are passed into marked
+	// See https://github.com/chjj/marked#options-1
+	markdown: {
+		pedantic: true
+	},
+
+	dependencies: [
+		{ src: "../../assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "../../assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "../../assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "../../assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "../../assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
+</html>

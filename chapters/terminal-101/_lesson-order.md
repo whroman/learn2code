@@ -1,4 +1,0 @@
-- (coding) our first commands
-- (lecture) what is the terminal
-- (coding) exploring the file system
-- (lecture) customize your console

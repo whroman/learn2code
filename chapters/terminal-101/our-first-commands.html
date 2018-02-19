@@ -1,0 +1,199 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Our First Commands - learn2code</title>
+		<link rel="stylesheet" href="../../assets/css/highlight.min.css">
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../assets/css/tipuesearch.css">
+		<link rel="stylesheet" href="../../assets/css/main.css">
+	</head>
+	<body>
+		<header class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../../">learn2code</a> <p class="navbar-text hidden-xs">Our First Commands</p>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-1">
+					<form action="../../search.html" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" name="q" id="tipue_search_input" autocomplete="off" required class="form-control" placeholder="Search">
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="../../chapters/terminal-101/our-first-commands-slideshow.html" target="_blank">View as slideshow</a></li>
+						<!--li><a href="../../chapters/terminal-101/our-first-commands-raw.html">View Markdown</a></li-->
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!--
+<div class="toc">
+<p class="lead">Table of contents:</p>
+<p class="toc-1">
+<a href="#our-first-commands">Our First Commands</a>
+</p>
+<p class="toc-2">
+<a href="#our-first-command-open">our first command: open</a>
+</p>
+<p class="toc-2">
+<a href="#what-is-a-quot-command-quot-">what is a &amp;quot;command&amp;quot;?</a>
+</p>
+<p class="toc-2">
+<a href="#the-executable">the executable</a>
+</p>
+<p class="toc-2">
+<a href="#the-argument">the argument</a>
+</p>
+<p class="toc-2">
+<a href="#execute-ls-">execute &#x60;ls .&#x60;</a>
+</p>
+</div>
+-->
+
+		<div class="container">
+			<div class="row">
+				<nav id="sidebar" class="col-lg-2 col-sm-3">
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation" class="active"><a href="../../chapters/terminal-101/our-first-commands.html">Our First Commands</a></li>
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/what-is-the-terminal.html">What is the Terminal</a></li>
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/exploring-the-file-system.html">Exploring the File System</a></li>
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/customizing-our-cli.html">Customizing our CLI</a></li>
+					</ul>
+					<!--
+Available versions:<br>
+raw<br>
+->chapters/terminal-101/our-first-commands-raw.html<br>
+slideshow<br>
+->chapters/terminal-101/our-first-commands-slideshow.html<br>
+default<br>
+->chapters/terminal-101/our-first-commands.html<br>
+<br>
+Document informations:<br>
+chapters/terminal-101/our-first-commands.md<br><br>
+active
+-->
+				</nav>
+				<header>
+					<div class="entry-meta text-right">
+
+					</div>
+				</header>
+				<article id="content" class="col-lg-10 col-sm-9">
+					<h1 id="our-first-commands">Our First Commands</h1>
+<p>new executables: <code>open</code> + <code>ls</code></p>
+<p>length: 10-15 mins</p>
+<h2 id="our-first-command-open">our first command: open</h2>
+<ol>
+<li>open terminal</li>
+<li>type <code>open .</code></li>
+<li>press &quot;enter&quot;</li>
+</ol>
+<p>we just <strong>executed</strong> our first <strong>command</strong>!</p>
+<p>in other words, you typed something into your terminal and pressed &quot;enter&quot;</p>
+<p>think of <strong>commands</strong> as <strong>sentences for computers</strong></p>
+<p>dissecting <code>open .</code></p>
+<table>
+<thead>
+<tr>
+<th>language</th>
+<th>sentence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bash</td>
+<td><code>open .</code></td>
+</tr>
+<tr>
+<td>english</td>
+<td>&quot;open with Finder&quot;  &quot;this directory&quot;</td>
+</tr>
+<tr>
+<td>generalized</td>
+<td>&quot;take this action&quot; &quot;onto this&quot;</td>
+</tr>
+<tr>
+<td>linguistic</td>
+<td>&quot;verb&quot; &quot;prepositional phrase&quot;</td>
+</tr>
+<tr>
+<td>computer sci</td>
+<td>&quot;executable&quot; &quot;argument&quot;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-a-command-">what is a &quot;command&quot;?</h2>
+<ul>
+<li><p>we can perform actions in a terminal by &quot;executing commands&quot;</p>
+</li>
+<li><p>a <strong>command</strong> is composed of three parts:</p>
+<ul>
+<li><code>executable</code></li>
+<li><code>arguments</code></li>
+<li><code>options</code></li>
+</ul>
+</li>
+<li><p>we&#39;ll only deal with <code>executables</code> and <code>arguments</code> for now</p>
+</li>
+<li><p>the parts of a command are <em>separated by spaces</em>, just like in written english</p>
+</li>
+</ul>
+<h2 id="the-executable">the executable</h2>
+<p><code>open .</code></p>
+<ul>
+<li>the first part of any command is the <strong>executable</strong></li>
+<li>for this command, the executable is <code>open</code></li>
+<li>think of <strong>executables</strong> as the <strong>verbs</strong> of the CLI</li>
+<li>an executable is the action that we want to occur</li>
+</ul>
+<h2 id="the-argument">the argument</h2>
+<p><code>open .</code></p>
+<ul>
+<li>in this command, the <code>.</code> is called an <strong>argument</strong></li>
+<li>think of <strong>arguments</strong> as the <strong>nouns</strong> of the CLI<ul>
+<li>an <strong>argument</strong> describes what we want to act upon with our <strong>executable</strong> (aka <strong>verb</strong>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="execute-ls-">execute <code>ls .</code></h2>
+<ul>
+<li>L i S t</li>
+<li>compare the terminal output with the Finder dir</li>
+<li>translation to english: <strong><list the contents of> <this directory></strong></li>
+<li>now we&#39;ve seen two different commands, <code>open</code> and <code>ls</code>, use <code>.</code> as an argument</li>
+</ul>
+
+				</article>
+			</div>
+		</div>
+
+		<footer><a href="../../site-index.html">Pages index</a>
+</footer>
+
+		<script src="../../assets/js/jquery.js"></script>
+		<script src="../../assets/js/bootstrap.min.js"></script>
+		<script src="../../assets/js/highlight.min.js"></script>
+		<script src="../../assets/js/tipuesearch_set.js"></script>
+		<script src="../../assets/js/tipuesearch.min.js"></script>
+		<script>
+			$(function() {
+				hljs.initHighlightingOnLoad();
+				$('#tipue_search_input').tipuesearch({
+					mode: 'json',
+					contentLocation: '../../index.json'
+				});
+			});
+		</script>
+		
+		<!-- Generated by Vegetables from 'chapters/terminal-101/our-first-commands.md' with format 'default' - '2018-2-19 20:27:20' -->
+	</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>exploring the file system</title>
+	<link rel="stylesheet" href="../../assets/css/reveal/reveal.css">
+	<link rel="stylesheet" href="../../assets/css/reveal/theme/white.css">
+	<link rel="stylesheet" href="../../assets/css/highlight-hybrid.css">
+	<link rel="stylesheet" href="../../assets/css/slideshow.css">
+	<!-- <link rel="stylesheet" href="../../assets/css/bootstrap.min.css"> -->
+	<style>
+	</style>
+	<!--  -->
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown
+			data-separator="(^#HSLIDE$|^#HSLIDE\?.*)"
+			data-separator-vertical="(^#VSLIDE$|^#VSLIDE\?.*)"
+			data-separator-notes="^Presentation note:"
+			data-charset="utf-8">
+			<script type="text/template">
+				# exploring the file system
+(new execs in this lesson: cd, touch, man, rm)
+(length: 25-30 mins)
+
+#HSLIDE
+
+## what is a file system?
+
+- a collection of files and directories
+- directories can only hold files or other directories
+- `Finder` is probably how you&#39;re most familiar to getting around a file system
+ - show example with finder
+- in the terminal, we have to use commands in order to navigate the file system, which we will now learn to do
+
+#HSLIDE
+
+## navigating the file system
+
+- we&#39;re going to use a new executable, `cd`
+- it stands for &quot;change directory&quot;
+- (EXEC) `ls .`
+ - see the dirs and files of your current dir
+- (EXEC) `cd Documents`
+ - english translation: <change directory to> <Documents> 
+- (EXEC) `ls .`
+ - see the dirs and files of `Documents`
+ - compare to Finder
+- (EXEC) `cd ../`
+ - english translation: <change directory to> <parent directory>
+ - family relations are used to describe file systems:
+  - parent, child, sibling
+  - show example of each relationship in Finder 
+ - now we&#39;re back where we started
+- (EXEC) `ls .`
+ - now we see that these are the same files and dirs that we had when we began
+
+#VSLIDE
+
+### creating and deleting files
+
+- (EXEC) `touch hello.txt`
+ - english translation: <create a file> <called hello.txt> 
+- (Q) how can we check to see whether this file exists?
+ - (EXEC) `ls .`
+ - view in finder
+ - show file through both methods
+- (EXEC) `rm hello.txt`
+ - english translation: <ReMove> &lt;hello.txt&gt;
+- (Q) how can we make sure this file was deleted?
+ - same as above
+
+#HSLIDE
+
+## command history
+
+- you can press &quot;up arrow&quot; to cycle back through your history of executed commads
+- use &quot;down arrow&quot; to cycle forward
+
+#HSLIDE
+
+## errors are your friend
+
+- cycle through your history and get to (EXEC) `rm hello.txt`
+- execute it
+- result is error: (EXEC) `rm: foo.txt: No such file or directory`
+- we were telling the terminal to delete a file that doesnt exist, so the terminal let us know that this file doesnt exist
+
+#VSLIDE
+
+### creating directories
+
+- we&#39;re going to create a new directory, so lets make sure that it doesnt exist yet in our file system:
+ - (EXEC) `ls .`
+ - (EXEC) `mkdir hello`
+  - english translation: <create a directory> <called "hello">
+
+#VSLIDE
+
+### command history
+
+- use terminal history (&quot;up arrow&quot;) to get to `ls .` and execute it
+ - make sure that the `hello` dir is there
+
+#VSLIDE
+
+### attempt to delete a directory
+
+- (EXEC) `rm hello`
+ - english translation: <remove> &lt;&quot;hello&quot;&gt;
+ - `rm: hello/: is a directory`
+ - what do we do...?
+
+#VSLIDE
+
+### man exec
+
+- english translation: <show me the MANual for> <any executable>
+- lets use `man` to find out if we can use `rm` to delete dirs
+- (EXEC) `man rm`
+ - we&#39;re in a file-read mode!
+ - interface:
+  - &quot;space bar&quot;   ||     &quot;scroll down&quot;
+  - &quot;b&quot;             ||     &quot;scroll up&quot;
+  - &quot;q&quot;           ||  &quot;exit read mode&quot;
+ - find entry for `-d`
+ - press `q`
+
+#VSLIDE
+
+### (EXEC) rm -d hello
+```
+                                        exec     option          argument
+```
+
+- english translation: <remove> <the directory> &lt;&quot;hello&quot;&gt;
+- options are always specified with a `-`
+- we should have succeeded this time in deleting `hello`
+- check using `ls .`
+
+#VSLIDE
+
+### FUN FACT
+
+- dont do this!
+- `sudo rm -rf .`
+
+#VSLIDE
+
+### command options
+if `commands` are like sentences to computers,
+and `executables` are like verbs to computers,
+and `arguments` are like nouns to computers,
+then what are `options`?
+
+options are like adverbs. they modify our exectuables/verbs/actions.
+
+
+			</script>
+		</section>
+	</div>
+</div>
+
+<script src="../../assets/js/reveal/reveal.js"></script>
+<script src="../../assets/js/reveal/lib/head.min.js"></script>
+<script src="../../assets/js/jquery.js"></script>
+<script>
+Reveal.initialize({
+	embedded: true,
+	margin: 0.0,
+	showNotes: false,
+	transition: 'slide',
+	autoSlide: 0,
+	loop: false,
+	center: true,
+	rtl: false,
+	shuffle: false,
+	mouseWheel: false,
+	history: true,
+
+	// disabled for now
+	// math: {
+	// 	mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+	// 	config: 'TeX-AMS_HTML-full'
+	// },
+
+
+	// Options which are passed into marked
+	// See https://github.com/chjj/marked#options-1
+	markdown: {
+		pedantic: true
+	},
+
+	dependencies: [
+		{ src: "../../assets/js/reveal/plugin/markdown/marked.js"},
+		{ src: "../../assets/js/reveal/plugin/markdown/markdown.js"},
+		{ src: "../../assets/js/reveal/plugin/notes/notes.js"},
+		// { src: "../../assets/js/reveal/plugin/math/math.js", async: true }
+		{ src: "../../assets/js/reveal/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+	]
+});
+
+Reveal.configure({
+	keyboard: {
+		67: function() { // bind "s" key to "select" code block content
+
+		var currentSlide = Reveal.getCurrentSlide();
+		var preBlock = $(currentSlide).find("pre");
+
+		if(preBlock.length > 0) {
+
+			if (window.getSelection) {
+				var range = document.createRange();
+				range.selectNodeContents(preBlock[0]);
+				var selection = window.getSelection();
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+		}
+	}
+}
+});
+
+</script>
+
+</body>
+</html>
