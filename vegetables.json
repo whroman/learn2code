@@ -1,0 +1,24 @@
+{
+    "serveAutoOpen": false,
+    "tags": {
+        "globalTitle": "learn2code",
+        "menu": [
+            {
+                "uri": "chapters/terminal-101/our-first-commands.html",
+                "label": "Our First Commands"
+            },
+            {
+                "uri": "chapters/terminal-101/what-is-the-terminal.html",
+                "label": "What is the Terminal"
+            },
+            {
+                "uri": "chapters/terminal-101/exploring-the-file-system.html",
+                "label": "Exploring the File System"
+            },
+            {
+                "uri": "chapters/terminal-101/customizing-our-cli.html",
+                "label": "Customizing our CLI"
+            }
+        ]
+    }
+}
