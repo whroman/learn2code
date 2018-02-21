@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Customizing our CLI - learn2code</title>
+		<title>Setting up our machines - learn2code</title>
 		<link rel="stylesheet" href="../../assets/css/highlight.min.css">
 		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../../assets/css/tipuesearch.css">
@@ -18,7 +18,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="../../">learn2code</a> <p class="navbar-text hidden-xs">Customizing our CLI</p>
+					<a class="navbar-brand" href="../../">learn2code</a> <p class="navbar-text hidden-xs">Setting up our machines</p>
 				</div>
 
 				<div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -28,8 +28,8 @@
 						</div>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="../../chapters/terminal-101/customizing-our-cli-slideshow.html" target="_blank">View as slideshow</a></li>
-						<!--li><a href="../../chapters/terminal-101/customizing-our-cli-raw.html">View Markdown</a></li-->
+						<li><a href="../../chapters/terminal-101/setting-up-our-machines-slideshow.html" target="_blank">View as slideshow</a></li>
+						<!--li><a href="../../chapters/terminal-101/setting-up-our-machines-raw.html">View Markdown</a></li-->
 					</ul>
 				</div>
 			</div>
@@ -39,10 +39,16 @@
 <div class="toc">
 <p class="lead">Table of contents:</p>
 <p class="toc-1">
-<a href="#customizing-our-cli">Customizing our CLI</a>
+<a href="#setting-up-our-machines">Setting up our machines</a>
 </p>
 <p class="toc-2">
-<a href="#styling">styling</a>
+<a href="#challenge-">challenge!</a>
+</p>
+<p class="toc-2">
+<a href="#steps-to-create-the-file">steps to create the file</a>
+</p>
+<p class="toc-2">
+<a href="#ways-to-display-an-html-file-in-a-browser">ways to display an html file in a browser</a>
 </p>
 </div>
 -->
@@ -54,20 +60,20 @@
 						<li role="presentation" class=""><a href="../../chapters/terminal-101/our-first-commands.html">Our First Commands</a></li>
 						<li role="presentation" class=""><a href="../../chapters/terminal-101/what-is-the-terminal.html">What is the Terminal</a></li>
 						<li role="presentation" class=""><a href="../../chapters/terminal-101/exploring-the-file-system.html">Exploring the File System</a></li>
-						<li role="presentation" class="active"><a href="../../chapters/terminal-101/customizing-our-cli.html">Customizing our CLI</a></li>
-						<li role="presentation" class=""><a href="../../chapters/terminal-101/setting-up-our-machines.html">Setting up our machines</a></li>
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/customizing-our-cli.html">Customizing our CLI</a></li>
+						<li role="presentation" class="active"><a href="../../chapters/terminal-101/setting-up-our-machines.html">Setting up our machines</a></li>
 					</ul>
 					<!--
 Available versions:<br>
 raw<br>
-->chapters/terminal-101/customizing-our-cli-raw.html<br>
+->chapters/terminal-101/setting-up-our-machines-raw.html<br>
 slideshow<br>
-->chapters/terminal-101/customizing-our-cli-slideshow.html<br>
+->chapters/terminal-101/setting-up-our-machines-slideshow.html<br>
 default<br>
-->chapters/terminal-101/customizing-our-cli.html<br>
+->chapters/terminal-101/setting-up-our-machines.html<br>
 <br>
 Document informations:<br>
-chapters/terminal-101/customizing-our-cli.md<br><br>
+chapters/terminal-101/setting-up-our-machines.md<br><br>
 active
 -->
 				</nav>
@@ -77,17 +83,43 @@ active
 					</div>
 				</header>
 				<article id="content" class="col-lg-10 col-sm-9">
-					<h1 id="customizing-our-cli">Customizing our CLI</h1>
-<p>(eta: 5-10 mins)</p>
-<h2 id="styling">styling</h2>
+					<h1 id="setting-up-our-machines">Setting up our machines</h1>
+<p>length: 10-15 mins</p>
+<h2 id="challenge-">challenge!</h2>
 <ul>
-<li>with Terminal open, go to upper left, click &quot;Terminal&quot;, then &quot;Preferences...&quot;<ul>
-<li>change background color</li>
-<li>change background opacity</li>
-<li>change &quot;text&quot; and &quot;bold text&quot; colors</li>
+<li>use the terminal to create the following file: <code>./Code/learn2code/01/index.html</code></li>
+<li>add some text to it</li>
+<li>display this page in a web browser</li>
+</ul>
+<h2 id="steps-to-create-the-file">steps to create the file</h2>
+<ol>
+<li><code>mkdir Code</code><ul>
+<li>this is where all code you&#39;ll write on your computer goes</li>
 </ul>
 </li>
+<li><code>cd Code</code></li>
+<li><code>mkdir learn2code</code><ul>
+<li>this is where all code you&#39;ll write during these sessions goes</li>
 </ul>
+</li>
+<li><code>cd learn2code</code></li>
+<li><code>mkdir project-01</code><ul>
+<li>this is where all code for our first project will go</li>
+</ul>
+</li>
+<li><code>cd project-01</code></li>
+<li><code>touch index.html</code> </li>
+</ol>
+<h2 id="ways-to-display-an-html-file-in-a-browser">ways to display an html file in a browser</h2>
+<ol>
+<li>drag the file into the browser app in the dock</li>
+<li>through the terminal...<ul>
+<li>navigate to the dir where <code>index.html</code> lives</li>
+<li>execute <code>python2.7 -m SimpleHTTPServer 3000</code></li>
+<li>navigate to <code>localhost:3000</code> in the browser </li>
+</ul>
+</li>
+</ol>
 
 				</article>
 			</div>
@@ -111,6 +143,6 @@ active
 			});
 		</script>
 		
-		<!-- Generated by Vegetables from 'chapters/terminal-101/customizing-our-cli.md' with format 'default' - '2018-2-21 22:38:24' -->
+		<!-- Generated by Vegetables from 'chapters/terminal-101/setting-up-our-machines.md' with format 'default' - '2018-2-21 22:38:24' -->
 	</body>
 </html>

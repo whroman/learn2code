@@ -23,8 +23,9 @@
 			data-charset="utf-8">
 			<script type="text/template">
 				# exploring the file system
-(new execs in this lesson: cd, touch, man, rm)
-(length: 25-30 mins)
+new execs in this lesson: `cd` + `touch` + `man` + `rm`
+
+length: 30-40 mins
 
 #HSLIDE
 
@@ -34,129 +35,165 @@
 - directories can only hold files or other directories
 - `Finder` is probably how you&#39;re most familiar to getting around a file system
  - show example with finder
-- in the terminal, we have to use commands in order to navigate the file system, which we will now learn to do
+- in the terminal, we have to use commands in order to navigate the file system
+- in this lesson we&#39;ll learn how to do this!
+- open your terminal!
 
 #HSLIDE
 
-## navigating the file system
+## execute
+`ls .`
 
-- we&#39;re going to use a new executable, `cd`
-- it stands for &quot;change directory&quot;
-- (EXEC) `ls .`
- - see the dirs and files of your current dir
-- (EXEC) `cd Documents`
- - english translation: <change directory to> <Documents> 
-- (EXEC) `ls .`
- - see the dirs and files of `Documents`
- - compare to Finder
-- (EXEC) `cd ../`
- - english translation: <change directory to> <parent directory>
- - family relations are used to describe file systems:
-  - parent, child, sibling
-  - show example of each relationship in Finder 
- - now we&#39;re back where we started
-- (EXEC) `ls .`
- - now we see that these are the same files and dirs that we had when we began
+see the dirs and files of your current dir
 
-#VSLIDE
+#HSLIDE
 
-### creating and deleting files
+## execute
+`cd Documents`
 
-- (EXEC) `touch hello.txt`
- - english translation: <create a file> <called hello.txt> 
-- (Q) how can we check to see whether this file exists?
- - (EXEC) `ls .`
- - view in finder
- - show file through both methods
-- (EXEC) `rm hello.txt`
- - english translation: <ReMove> &lt;hello.txt&gt;
-- (Q) how can we make sure this file was deleted?
- - same as above
+
+- `cd` stands for &quot;change directory&quot;
+- english translation: &quot;change directory to&quot; &quot;Documents&quot;
+
+#HSLIDE
+
+## execute
+`ls .`
+
+
+- see the dirs and files of `Documents`
+- compare to Finder
+
+#HSLIDE
+
+## execute
+`cd ../`
+
+
+- english translation: &quot;change directory to&quot; &quot;parent directory&quot;
+- family relationships are used to describe file systems:
+ - parent, child, sibling
+ - show example of each relationship in Finder
+- now we&#39;re in the same dir that we started
+
+#HSLIDE
+
+## execute
+`ls .`
+
+now we see that these are the same files and dirs that we had when we began
+
+#HSLIDE
+
+## creating and deleting files
+
+- execute `touch hello.txt`
+- english translation: &quot;create a file&quot; &quot;called hello.txt&quot; 
+
+#HSLIDE
+
+## was hello.txt was really created?
+how can we check?
+
+<ul class="fragment">
+    <li>execute <code>ls .</code></li>
+    <li>view in finder</li>
+</ul>    
+
+
+#HSLIDE
+
+## execute
+`rm hello.txt`
+
+english translation: &quot;ReMove&quot; &quot;hello.txt&quot;
+
+so...how can we make sure this file was deleted?
+
+<div class="fragment">same as before!</div>
+
 
 #HSLIDE
 
 ## command history
 
-- you can press &quot;up arrow&quot; to cycle back through your history of executed commads
+- you can press the &quot;up arrow&quot; key to cycle back through your history of executed commads
 - use &quot;down arrow&quot; to cycle forward
 
 #HSLIDE
 
 ## errors are your friend
 
-- cycle through your history and get to (EXEC) `rm hello.txt`
+- cycle through your history and get to the command `rm hello.txt`
 - execute it
-- result is error: (EXEC) `rm: foo.txt: No such file or directory`
+- the result is error: execute `rm: foo.txt: No such file or directory`
 - we were telling the terminal to delete a file that doesnt exist, so the terminal let us know that this file doesnt exist
 
-#VSLIDE
+#HSLIDE
 
-### creating directories
+## creating directories
 
-- we&#39;re going to create a new directory, so lets make sure that it doesnt exist yet in our file system:
- - (EXEC) `ls .`
- - (EXEC) `mkdir hello`
-  - english translation: <create a directory> <called "hello">
+- execute `ls .`
+ - we&#39;re going to create a new directory, so we want to make sure that it doesnt exist yet in our file system
+- execute `mkdir hello`
+ - english translation: &quot;create a directory&quot; &quot;called &#39;hello&#39;&quot;
 
-#VSLIDE
+#HSLIDE
 
-### command history
+## command history
+use terminal history (&quot;up arrow&quot;) to get to `ls .` and execute it
 
-- use terminal history (&quot;up arrow&quot;) to get to `ls .` and execute it
- - make sure that the `hello` dir is there
+make sure that the `hello` dir is there
 
-#VSLIDE
+#HSLIDE
 
-### attempt to delete a directory
+## attempt to delete a directory
+execute `rm hello`
 
-- (EXEC) `rm hello`
- - english translation: <remove> &lt;&quot;hello&quot;&gt;
- - `rm: hello/: is a directory`
- - what do we do...?
 
-#VSLIDE
+- english translation: &quot;remove&quot; &quot;hello&quot;&gt;
+- `rm: hello/: is a directory`
+- what do we do...?
 
-### man exec
+#HSLIDE
 
-- english translation: <show me the MANual for> <any executable>
+## execute
+`man &lt;exec&gt;`
+
+
+- english translation: &quot;show me the MANual for&quot; &quot;any executable&quot;
 - lets use `man` to find out if we can use `rm` to delete dirs
-- (EXEC) `man rm`
+- execute `man rm`
  - we&#39;re in a file-read mode!
+ - this used to freak me out! i didnt know how to get out of it or what it was!
  - interface:
-  - &quot;space bar&quot;   ||     &quot;scroll down&quot;
-  - &quot;b&quot;             ||     &quot;scroll up&quot;
-  - &quot;q&quot;           ||  &quot;exit read mode&quot;
+  - &quot;space bar&quot; =&gt; &quot;scroll down&quot;
+  - &quot;b&quot; =&gt;    &quot;scroll up&quot;
+  - &quot;q&quot; =&gt;  &quot;exit read mode&quot;
  - find entry for `-d`
- - press `q`
+ - press `q` (exit file-read)
 
-#VSLIDE
+#HSLIDE
 
-### (EXEC) rm -d hello
+## execute
+`rm -d hello`
+
 ```
-                                        exec     option          argument
+execitable  option          argument
+"remove"    "a directory"   "hello"
 ```
 
-- english translation: <remove> <the directory> &lt;&quot;hello&quot;&gt;
 - options are always specified with a `-`
 - we should have succeeded this time in deleting `hello`
 - check using `ls .`
 
-#VSLIDE
+#HSLIDE
 
-### FUN FACT
+## FUN FACT
 
 - dont do this!
 - `sudo rm -rf .`
-
-#VSLIDE
-
-### command options
-if `commands` are like sentences to computers,
-and `executables` are like verbs to computers,
-and `arguments` are like nouns to computers,
-then what are `options`?
-
-options are like adverbs. they modify our exectuables/verbs/actions.
+- if you do this at the top-level directory of a computer, it will delete EVERYTHING
 
 
 			</script>

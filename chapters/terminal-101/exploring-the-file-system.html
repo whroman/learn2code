@@ -45,10 +45,28 @@
 <a href="#what-is-a-file-system-">what is a file system?</a>
 </p>
 <p class="toc-2">
-<a href="#navigating-the-file-system">navigating the file system</a>
+<a href="#execute">execute</a>
 </p>
-<p class="toc-3">
+<p class="toc-2">
+<a href="#execute">execute</a>
+</p>
+<p class="toc-2">
+<a href="#execute">execute</a>
+</p>
+<p class="toc-2">
+<a href="#execute">execute</a>
+</p>
+<p class="toc-2">
+<a href="#execute">execute</a>
+</p>
+<p class="toc-2">
 <a href="#creating-and-deleting-files">creating and deleting files</a>
+</p>
+<p class="toc-2">
+<a href="#was-hello-txt-was-really-created-">was &#x60;hello.txt&#x60; was really created?</a>
+</p>
+<p class="toc-2">
+<a href="#execute">execute</a>
 </p>
 <p class="toc-2">
 <a href="#command-history">command history</a>
@@ -56,26 +74,23 @@
 <p class="toc-2">
 <a href="#errors-are-your-friend">errors are your friend</a>
 </p>
-<p class="toc-3">
+<p class="toc-2">
 <a href="#creating-directories">creating directories</a>
 </p>
-<p class="toc-3">
+<p class="toc-2">
 <a href="#command-history">command history</a>
 </p>
-<p class="toc-3">
+<p class="toc-2">
 <a href="#attempt-to-delete-a-directory">attempt to delete a directory</a>
 </p>
-<p class="toc-3">
-<a href="#-man-exec-">&#x60;man &lt;exec&gt;&#x60;</a>
+<p class="toc-2">
+<a href="#execute">execute</a>
 </p>
-<p class="toc-3">
-<a href="#-exec-rm-d-hello-">(EXEC) &#x60;rm -d hello&#x60;</a>
+<p class="toc-2">
+<a href="#execute">execute</a>
 </p>
-<p class="toc-3">
+<p class="toc-2">
 <a href="#fun-fact">FUN FACT</a>
-</p>
-<p class="toc-3">
-<a href="#command-options">command options</a>
 </p>
 </div>
 -->
@@ -88,6 +103,7 @@
 						<li role="presentation" class=""><a href="../../chapters/terminal-101/what-is-the-terminal.html">What is the Terminal</a></li>
 						<li role="presentation" class="active"><a href="../../chapters/terminal-101/exploring-the-file-system.html">Exploring the File System</a></li>
 						<li role="presentation" class=""><a href="../../chapters/terminal-101/customizing-our-cli.html">Customizing our CLI</a></li>
+						<li role="presentation" class=""><a href="../../chapters/terminal-101/setting-up-our-machines.html">Setting up our machines</a></li>
 					</ul>
 					<!--
 Available versions:<br>
@@ -110,8 +126,8 @@ active
 				</header>
 				<article id="content" class="col-lg-10 col-sm-9">
 					<h1 id="exploring-the-file-system">exploring the file system</h1>
-<p>(new execs in this lesson: cd, touch, man, rm)
-(length: 25-30 mins)</p>
+<p>new execs in this lesson: <code>cd</code> + <code>touch</code> + <code>man</code> + <code>rm</code></p>
+<p>length: 30-40 mins</p>
 <h2 id="what-is-a-file-system-">what is a file system?</h2>
 <ul>
 <li>a collection of files and directories</li>
@@ -120,138 +136,126 @@ active
 <li>show example with finder</li>
 </ul>
 </li>
-<li>in the terminal, we have to use commands in order to navigate the file system, which we will now learn to do</li>
+<li>in the terminal, we have to use commands in order to navigate the file system</li>
+<li>in this lesson we&#39;ll learn how to do this!</li>
+<li>open your terminal!</li>
 </ul>
-<h2 id="navigating-the-file-system">navigating the file system</h2>
+<h2 id="execute">execute</h2>
+<p><code>ls .</code></p>
+<p>see the dirs and files of your current dir</p>
+<h2 id="execute">execute</h2>
+<p><code>cd Documents</code></p>
 <ul>
-<li>we&#39;re going to use a new executable, <code>cd</code></li>
-<li><p>it stands for &quot;change directory&quot;</p>
-</li>
-<li><p>(EXEC) <code>ls .</code></p>
+<li><code>cd</code> stands for &quot;change directory&quot;</li>
+<li>english translation: &quot;change directory to&quot; &quot;Documents&quot;</li>
+</ul>
+<h2 id="execute">execute</h2>
+<p><code>ls .</code></p>
 <ul>
-<li>see the dirs and files of your current dir</li>
-</ul>
-</li>
-<li>(EXEC) <code>cd Documents</code><ul>
-<li>english translation: <change directory to> <Documents> </li>
-</ul>
-</li>
-<li>(EXEC) <code>ls .</code><ul>
 <li>see the dirs and files of <code>Documents</code></li>
 <li>compare to Finder</li>
 </ul>
-</li>
-<li>(EXEC) <code>cd ../</code><ul>
-<li>english translation: <change directory to> <parent directory></li>
-<li>family relations are used to describe file systems:<ul>
-<li>parent, child, sibling</li>
-<li>show example of each relationship in Finder </li>
-</ul>
-</li>
-<li>now we&#39;re back where we started</li>
-</ul>
-</li>
-<li>(EXEC) <code>ls .</code><ul>
-<li>now we see that these are the same files and dirs that we had when we began</li>
-</ul>
-</li>
-</ul>
-<h3 id="creating-and-deleting-files">creating and deleting files</h3>
+<h2 id="execute">execute</h2>
+<p><code>cd ../</code></p>
 <ul>
-<li>(EXEC) <code>touch hello.txt</code><ul>
-<li>english translation: <create a file> <called hello.txt> </li>
+<li>english translation: &quot;change directory to&quot; &quot;parent directory&quot;</li>
+<li>family relationships are used to describe file systems:<ul>
+<li>parent, child, sibling</li>
+<li>show example of each relationship in Finder</li>
 </ul>
 </li>
-<li>(Q) how can we check to see whether this file exists?<ul>
-<li>(EXEC) <code>ls .</code></li>
-<li>view in finder</li>
-<li>show file through both methods</li>
+<li>now we&#39;re in the same dir that we started</li>
 </ul>
-</li>
-<li>(EXEC) <code>rm hello.txt</code><ul>
-<li>english translation: <ReMove> &lt;hello.txt&gt;</li>
+<h2 id="execute">execute</h2>
+<p><code>ls .</code></p>
+<p>now we see that these are the same files and dirs that we had when we began</p>
+<h2 id="creating-and-deleting-files">creating and deleting files</h2>
+<ul>
+<li>execute <code>touch hello.txt</code></li>
+<li>english translation: &quot;create a file&quot; &quot;called hello.txt&quot; </li>
 </ul>
-</li>
-<li>(Q) how can we make sure this file was deleted?<ul>
-<li>same as above</li>
-</ul>
-</li>
-</ul>
+<h2 id="was-hello-txt-was-really-created-">was <code>hello.txt</code> was really created?</h2>
+<p>how can we check?</p>
+<ul class="fragment">
+    <li>execute <code>ls .</code></li>
+    <li>view in finder</li>
+</ul>    
+
+
+<h2 id="execute">execute</h2>
+<p><code>rm hello.txt</code></p>
+<p>english translation: &quot;ReMove&quot; &quot;hello.txt&quot;</p>
+<p>so...how can we make sure this file was deleted?</p>
+<div class="fragment">same as before!</div>
+
+
 <h2 id="command-history">command history</h2>
 <ul>
-<li>you can press &quot;up arrow&quot; to cycle back through your history of executed commads</li>
+<li>you can press the &quot;up arrow&quot; key to cycle back through your history of executed commads</li>
 <li>use &quot;down arrow&quot; to cycle forward</li>
 </ul>
 <h2 id="errors-are-your-friend">errors are your friend</h2>
 <ul>
-<li>cycle through your history and get to (EXEC) <code>rm hello.txt</code></li>
+<li>cycle through your history and get to the command <code>rm hello.txt</code></li>
 <li>execute it</li>
-<li>result is error: (EXEC) <code>rm: foo.txt: No such file or directory</code></li>
+<li>the result is error: execute <code>rm: foo.txt: No such file or directory</code></li>
 <li>we were telling the terminal to delete a file that doesnt exist, so the terminal let us know that this file doesnt exist</li>
 </ul>
-<h3 id="creating-directories">creating directories</h3>
+<h2 id="creating-directories">creating directories</h2>
 <ul>
-<li>we&#39;re going to create a new directory, so lets make sure that it doesnt exist yet in our file system:<ul>
-<li>(EXEC) <code>ls .</code></li>
-<li>(EXEC) <code>mkdir hello</code><ul>
-<li>english translation: <create a directory> <called "hello"></li>
+<li>execute <code>ls .</code><ul>
+<li>we&#39;re going to create a new directory, so we want to make sure that it doesnt exist yet in our file system</li>
+</ul>
+</li>
+<li>execute <code>mkdir hello</code><ul>
+<li>english translation: &quot;create a directory&quot; &quot;called &#39;hello&#39;&quot;</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="command-history">command history</h3>
+<h2 id="command-history">command history</h2>
+<p>use terminal history (&quot;up arrow&quot;) to get to <code>ls .</code> and execute it</p>
+<p>make sure that the <code>hello</code> dir is there</p>
+<h2 id="attempt-to-delete-a-directory">attempt to delete a directory</h2>
+<p>execute <code>rm hello</code></p>
 <ul>
-<li>use terminal history (&quot;up arrow&quot;) to get to <code>ls .</code> and execute it<ul>
-<li>make sure that the <code>hello</code> dir is there</li>
-</ul>
-</li>
-</ul>
-<h3 id="attempt-to-delete-a-directory">attempt to delete a directory</h3>
-<ul>
-<li>(EXEC) <code>rm hello</code><ul>
-<li>english translation: <remove> &lt;&quot;hello&quot;&gt;</li>
+<li>english translation: &quot;remove&quot; &quot;hello&quot;&gt;</li>
 <li><code>rm: hello/: is a directory</code></li>
 <li>what do we do...?</li>
 </ul>
-</li>
-</ul>
-<h3 id="man-exec"><code>man &lt;exec&gt;</code></h3>
+<h2 id="execute">execute</h2>
+<p><code>man &lt;exec&gt;</code></p>
 <ul>
-<li>english translation: <show me the MANual for> <any executable></li>
+<li>english translation: &quot;show me the MANual for&quot; &quot;any executable&quot;</li>
 <li>lets use <code>man</code> to find out if we can use <code>rm</code> to delete dirs</li>
-<li>(EXEC) <code>man rm</code><ul>
+<li>execute <code>man rm</code><ul>
 <li>we&#39;re in a file-read mode!</li>
+<li>this used to freak me out! i didnt know how to get out of it or what it was!</li>
 <li>interface:<ul>
-<li>&quot;space bar&quot;   ||     &quot;scroll down&quot;</li>
-<li>&quot;b&quot;             ||     &quot;scroll up&quot;</li>
-<li>&quot;q&quot;           ||  &quot;exit read mode&quot;</li>
+<li>&quot;space bar&quot; =&gt; &quot;scroll down&quot;</li>
+<li>&quot;b&quot; =&gt;    &quot;scroll up&quot;</li>
+<li>&quot;q&quot; =&gt;  &quot;exit read mode&quot;</li>
 </ul>
 </li>
 <li>find entry for <code>-d</code></li>
-<li>press <code>q</code></li>
+<li>press <code>q</code> (exit file-read)</li>
 </ul>
 </li>
 </ul>
-<h3 id="-exec-rm-d-hello">(EXEC) <code>rm -d hello</code></h3>
-<pre><code>                                        exec     option          argument
+<h2 id="execute">execute</h2>
+<p><code>rm -d hello</code></p>
+<pre><code>execitable  option          argument
+&quot;remove&quot;    &quot;a directory&quot;   &quot;hello&quot;
 </code></pre><ul>
-<li>english translation: <remove> <the directory> &lt;&quot;hello&quot;&gt;</li>
 <li>options are always specified with a <code>-</code></li>
 <li>we should have succeeded this time in deleting <code>hello</code></li>
 <li>check using <code>ls .</code></li>
 </ul>
-<h3 id="fun-fact">FUN FACT</h3>
+<h2 id="fun-fact">FUN FACT</h2>
 <ul>
 <li>dont do this!</li>
 <li><code>sudo rm -rf .</code></li>
+<li>if you do this at the top-level directory of a computer, it will delete EVERYTHING</li>
 </ul>
-<h3 id="command-options">command options</h3>
-<p>if <code>commands</code> are like sentences to computers,
-and <code>executables</code> are like verbs to computers,
-and <code>arguments</code> are like nouns to computers,
-then what are <code>options</code>?</p>
-<p>options are like adverbs. they modify our exectuables/verbs/actions.</p>
 
 				</article>
 			</div>
@@ -275,6 +279,6 @@ then what are <code>options</code>?</p>
 			});
 		</script>
 		
-		<!-- Generated by Vegetables from 'chapters/terminal-101/exploring-the-file-system.md' with format 'default' - '2018-2-19 20:27:20' -->
+		<!-- Generated by Vegetables from 'chapters/terminal-101/exploring-the-file-system.md' with format 'default' - '2018-2-21 22:38:24' -->
 	</body>
 </html>

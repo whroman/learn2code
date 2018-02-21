@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>_lesson-order</title>
+	<title>Setting up our machines</title>
 	<link rel="stylesheet" href="../../assets/css/reveal/reveal.css">
 	<link rel="stylesheet" href="../../assets/css/reveal/theme/white.css">
 	<link rel="stylesheet" href="../../assets/css/highlight-hybrid.css">
@@ -22,12 +22,41 @@
 			data-separator-notes="^Presentation note:"
 			data-charset="utf-8">
 			<script type="text/template">
-				
-- (coding) our first commands
-- (lecture) what is the terminal
-- (coding) exploring the file system
-- (lecture) customize your console
-- (coding) setting up our machines
+				# Setting up our machines
+length: 10-15 mins
+
+#HSLIDE
+
+## challenge!
+
+- use the terminal to create the following file: `./Code/learn2code/01/index.html`
+- add some text to it
+- display this page in a web browser
+
+#HSLIDE
+
+## steps to create the file
+
+1. `mkdir Code`
+ - this is where all code you&#39;ll write on your computer goes
+1. `cd Code`
+1. `mkdir learn2code`
+ - this is where all code you&#39;ll write during these sessions goes
+1. `cd learn2code`
+1. `mkdir project-01`
+ - this is where all code for our first project will go
+1. `cd project-01`
+1. `touch index.html` 
+
+#HSLIDE
+
+## ways to display an html file in a browser
+
+1. drag the file into the browser app in the dock
+1. through the terminal...
+ - navigate to the dir where `index.html` lives
+ - execute `python2.7 -m SimpleHTTPServer 3000`
+ - navigate to `localhost:3000` in the browser 
 
 
 			</script>
